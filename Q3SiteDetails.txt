@@ -1,0 +1,13 @@
+Logo Size
+
+width : 150px
+height : 150px
+resolution : 100px to 300px
+
+
+Ads Banner Size
+
+width : 150px
+height : 150px
+resolution : 100px to 300px
+Ads Example Banner Size : https://drive.google.com/file/d/1HFkleNefIO-BZNOarjjQJgOmyg00VliC/view?usp=sharing
