@@ -149,8 +149,8 @@ h6 {
 
 #topbar .social-links a {
   color: rgba(255, 255, 255, 0.6);
-  padding: 4px 12px;
-padding-right: auto;
+  /* padding: 4px 12px; */
+/* padding-right: auto; */
 margin-right: 30px;
   display: inline-block;
   /* line-height: 1px; */
@@ -164,7 +164,7 @@ margin-right: 30px;
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-#header {
+/* #header {
   background: rgba(25, 25, 25, 0.95);
   transition: all 0.5s;
   z-index: 997;
@@ -195,7 +195,7 @@ margin-right: 30px;
 
 .scrolled-offset {
   margin-top: 70px;
-}
+} */
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -203,7 +203,7 @@ margin-right: 30px;
 /**
 * Desktop Navigation 
 */
-.navbar {
+/* .navbar {
   padding: 0;
 }
 
@@ -300,8 +300,8 @@ margin-right: 30px;
   top: 0;
   left: 100%;
   visibility: visible;
-}
-
+} */
+/* 
 @media (max-width: 1366px) {
   .navbar .dropdown .dropdown ul {
     left: -90%;
@@ -310,12 +310,12 @@ margin-right: 30px;
   .navbar .dropdown .dropdown:hover>ul {
     left: -100%;
   }
-}
+} */
 
 /**
 * Mobile Navigation 
 */
-.mobile-nav-toggle {
+/* .mobile-nav-toggle {
   color: #fff;
   font-size: 28px;
   cursor: pointer;
@@ -420,7 +420,7 @@ margin-right: 30px;
 
 .navbar-mobile .dropdown>.dropdown-active {
   display: block;
-}
+} */
 
 /*--------------------------------------------------------------
 # Hero Section
