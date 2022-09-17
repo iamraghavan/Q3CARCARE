@@ -12,18 +12,18 @@
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <title>Firebase Authentication</title>
+    <title>Q3 Car Care | Firebase Authentication</title>
 </head>
 <body>
     <div class="login-signup">
         <h2>Login</h2>
         <form action="" id="login">
             <div class="user-box">
-                <input type="email" name="" id="login-email" autocomplete="off" required>
+                <input type="email" name="" id="login-email" autocomplete="on" required>
                 <label for="">Email</label>
             </div>
             <div class="user-box">
-                <input type="password" name="" id="login-pwd" autocomplete="off" required style="margin-bottom: 0px;">
+                <input type="password" name="" id="login-pwd" autocomplete="on" required style="margin-bottom: 0px;">
                 <label for="">Password</label>
             </div>
             <div class="forgot-pwd">
@@ -40,15 +40,15 @@
         <h2>Signup</h2>
         <form action="" id="signup">
             <div class="user-box">
-                <input type="text" name="" id="signup-username" autocomplete="off" required>
+                <input type="text" name="" id="signup-username" autocomplete="on" required>
                 <label for="">Username</label>
             </div>
             <div class="user-box">
-                <input type="email" name="" id="signup-email" autocomplete="off" required>
+                <input type="email" name="" id="signup-email" autocomplete="on" required>
                 <label for="">Email</label>
             </div>
             <div class="user-box">
-                <input type="password" name="" id="signup-pwd" autocomplete="off" required>
+                <input type="password" name="" id="signup-pwd" autocomplete="on" required>
                 <label for="">Password</label>
             </div>
             <div class="btn">
@@ -62,6 +62,12 @@
         <h1></h1>
         <button>Sign Out</button>
     </div>
+
+
+
+     
+
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
 
 <script>
@@ -82,5 +88,32 @@
   firebase.analytics();
 </script>
     <script src="./javascript/app.js"></script>
+
+
+
+    <footer class="footer-section">
+        
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2022, All Right Reserved  - Firebase</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                        <div class="footer-menu">
+                           <img class ="footerImg" src="../Logo/merFire.png" alt="" width="200px" height="auto" srcset="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    
 </body>
 </html>

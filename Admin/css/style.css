@@ -5,10 +5,19 @@
     font-family: sans-serif;
 }
 
-body{
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+  
+
+
+/* body{
     height: 100vh;
     background: linear-gradient(to right , #090979,#00d4ff);
-}
+} */
 
 .login-signup{
     display: none;
@@ -130,4 +139,26 @@ h4 span{
     outline: none;
     margin-right: 40px;
     border-radius: 20px;
+}
+
+
+
+
+/* ---------------------------- */
+
+.copyright-area{
+  background: #202020;
+  padding: 10px 0;
+}
+.copyright-text p {
+  margin: 0px 10px;
+  font-size: 14px;
+  color: #878787;
+}
+
+.footerImg{
+    margin: 0px 10px
+}
+.copyright-text p a{
+  color: #ff5e14;
 }
