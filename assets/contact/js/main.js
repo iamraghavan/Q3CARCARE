@@ -1,3 +1,8 @@
+// optional
+$('#blogCarousel').carousel({
+	interval: 5000
+});
+
 (function($) {
 
 	"use strict";
