@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-firestore.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Firebase Authentication</title>
+</head>
+<body>
+    <div class="login-signup">
+        <h2>Login</h2>
+        <form action="" id="login">
+            <div class="user-box">
+                <input type="email" name="" id="login-email" autocomplete="off" required>
+                <label for="">Email</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="" id="login-pwd" autocomplete="off" required style="margin-bottom: 0px;">
+                <label for="">Password</label>
+            </div>
+            <div class="forgot-pwd">
+                <h4>Forgot Password?</h4>
+            </div>
+            <div class="btn">
+                <button id="login-submit">Submit</button>
+                <div class="loader"></div>
+            </div>
+            <h4>Create Account ? <span id ='nav-to-signup'>Click here</span></h4>
+        </form>
+    </div>
+    <div class="login-signup">
+        <h2>Signup</h2>
+        <form action="" id="signup">
+            <div class="user-box">
+                <input type="text" name="" id="signup-username" autocomplete="off" required>
+                <label for="">Username</label>
+            </div>
+            <div class="user-box">
+                <input type="email" name="" id="signup-email" autocomplete="off" required>
+                <label for="">Email</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="" id="signup-pwd" autocomplete="off" required>
+                <label for="">Password</label>
+            </div>
+            <div class="btn">
+                <button id="signup-submit">Submit</button>
+                <div class="loader"></div>
+            </div>
+           <h4>Already have an Account ? <span id="nav-to-login">Click here</span></h4>
+        </form>
+    </div>
+    <div class="user-details" style="display: none;">
+        <h1></h1>
+        <button>Sign Out</button>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyC7s_qvCXXzuDpk_G2VabP9J4DHckdsEJA",
+    authDomain: "q3carcare-6efb7.firebaseapp.com",
+    databaseURL: "https://q3carcare-6efb7-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "q3carcare-6efb7",
+    storageBucket: "q3carcare-6efb7.appspot.com",
+    messagingSenderId: "82800552387",
+    appId: "1:82800552387:web:f5e4a0bd8377ee96fdf576",
+    measurementId: "G-51XEMWDKY0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+    <script src="./javascript/app.js"></script>
+</body>
+</html>
