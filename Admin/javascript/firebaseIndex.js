@@ -4,7 +4,7 @@ document.getElementById("loginForm").addEventListener("submit",(event)=>{
 
 firebase.auth().onAuthStateChanged((user)=>{
     if(user){
-        location.replace("dashboard.html")
+        location.replace("../Angular/q3carcare/src/index.html")
     }
 })
 

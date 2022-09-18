@@ -68,7 +68,7 @@
 
 
 
-                   <a href="#!" class="forgot-password-link" style="font-weight:none; font-size: 15px;" >Forgot password?</a>
+                   <a href="#" onclick="forgotPass()" class="forgot-password-link" style="font-weight:none; font-size: 15px;" >Forgot password?</a>
                     <!-- <p class="login-card-footer-text">Don't have an account? <a href="#!" class="text-reset">Register here</a></p> -->
                     <nav class="login-card-footer-nav">
                       <a href="#!">Terms of use.</a>
@@ -84,6 +84,23 @@
 
         
       </main>
+
+
+      <hr>
+      <div style="padding: 20mm">
+
+        <input type="file" name="file" (input)="onFileChanged($event)"  accept=".jpeg,.jpg,.png,.svg" />
+        <br />
+      
+        <img [src]="downloadableURL"  onerror="this.onerror=null;this.src='assets/noimage.jpg';"  width="300px" height="300px"/>
+        
+        <br />
+      
+        {{ downloadableURL }}
+        
+      
+      
+      </div>
 
 
 <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>

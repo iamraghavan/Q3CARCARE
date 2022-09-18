@@ -19,12 +19,120 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
     ></script>
 </head>
-<body>
+<body class="container">
     <center><div style="margin:100px">
         <span id="user" class="message">Hello, < email-id ></Email-id></span>
-        <div class="success"><span>Welcome to auth starter, You are successfully loged in!!!</span></div><br/>
+        <div class="success"><h5>Welcome to <span style="color:#DC3545;"> Q3 Car Care </span> Dashboard, You are successfully loged in!!!</h5></div><br/>
         <button class="btn btn-danger" onclick="logout()">Logout</button>
     </div></center>
+
+    
+    <!-- <body "
+        style="margin-top: 50px;
+                width: 50% ;height:auto;"> -->
+    
+        <h2 class="text-primary"
+            style="margin-left: 15px; margin-bottom: 10px">
+                Hey There,Here we are going to upload
+        </h2>
+        <form class="container" id="contactForm">
+            <div class="card">
+                <div class="card-body">
+    
+                    <div class="form-group"
+                        style="margin-left: 15px;
+                                margin-top: 10px;
+                                display:none;">
+        <label for=" exampleFormControlSelect1 ">Select Type</label>
+        <select class="form-control " id="types ">
+        <option>1</option>
+        </select>
+    </div>
+    
+    <br>
+        Document Upload:
+        <br>
+        <!-- click here to choose file -->
+
+
+        <input type="file" name="files[]" id="files">
+        <!-- click here to upload file -->
+        <!-- <input type="hidden "
+            name="url "
+            id="url "> -->
+            <button type="button " onclick="uploadimage() ">
+                Upload Image
+                </button>
+            <br><br>
+    </div>
+    </div>
+    
+    <button type="submit "
+            class="btn btn-primary "
+            style="margin-left: 15px; margin-top: 10px; display:none; ">
+                    Submit
+    </button>
+    
+    </form>
+    <script>
+    
+    
+    // var messagesRef = firebase.database().ref('Checking');
+    // document.getElementById(
+    //     'contactForm').addEventListener('submit', submitForm);
+    // //uploading file in storage
+    // function uploadimage(){
+    //     var type = getInputVal('types');
+    // var storage = firebase.storage();
+    // var file=document.getElementById("files ").files[0];
+    // var storageref=storage.ref();
+    // var thisref=storageref.child(type).child(file.name).put(file);
+    // thisref.on('state_changed',function(snapshot) {
+    
+    
+    // }, function(error) {
+    
+    // }, function() {
+    // // Uploaded completed successfully, now we can get the download URL
+    // thisref.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+    //     //getting url of image
+    //     document.getElementById("url ").value=downloadURL;
+    //     alert('uploaded successfully');
+    //     saveMessage(downloadURL);
+    // });
+    // });
+    
+    // // Get values
+    // var url = getInputVal('url');
+    // // Save message
+    // // saveMessage(url);
+    // }
+    // function getInputVal(id){
+    //     document.getElementById('contactForm').reset();
+    
+    // }
+    
+    
+    // // Function to get get form values
+    // function getInputVal(id){
+    // return document.getElementById(id).value;
+    // }
+    
+    // // Save message to firebase database
+    // function saveMessage(url){
+    // var newMessageRef = messagesRef.push();
+    // newMessageRef.set({
+    // imageurl:url,
+    // });
+    // }
+
+
+
+    
+    </script>
+
+
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
 
