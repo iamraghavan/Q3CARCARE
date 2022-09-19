@@ -118,13 +118,50 @@
 }
 }
 
+.bg-custom-1 {
+  background-color: #85144b;
+}
+
+.bg-custom-2 {
+background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+}
+
 
     </style>
 
 </head>
-<body class="container">
-    <center><div style="margin:100px">
-        <span id="user" class="message">Hello, < email-id ></Email-id></span>
+<body class="container-fluid">
+
+    <nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <span style="padding-left:40px ;" id="displayDateTime"></span>
+        </div>
+      </nav>
+
+
+        <script type="text/javascript">
+  var today = new Date();
+  var day = today.getDay();
+  var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  var dateTime = date+' '+time;
+   
+  document.getElementById("displayDateTime").innerHTML = dateTime + ' <br> Day :- ' + daylist[day];
+ 
+  </script>
+
+      
+      
+              <!-- Optional JavaScript -->
+              <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+              <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+    <center><div style="margin-top:100px">
+        <h4 id="user" class="message"><span style="color:#DC3545;" >Hello 👋🏻</span> <email-id></Email-id></h4>
         <div class="success"><h5>Welcome to <span style="color:#DC3545;"> Q3 Car Care </span> Dashboard, You are successfully loged in!!!</h5></div><br/>
         <button class="btn btn-danger" onclick="logout()">Logout</button>
     </div></center>
