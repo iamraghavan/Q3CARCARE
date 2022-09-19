@@ -21,116 +21,13 @@
     ></script>
 
     <style>
-       .main-search-input {
-    background: #fff;
-    padding: 0 120px 0 0;
-    border-radius: 1px;
-    margin-top: 200px;
-    box-shadow: 0px 0px 0px 6px rgba(255,255,255,0.3);
-}
 
-.fl-wrap {
-    float: left;
-    width: 100%;
-    position: relative;
-}
-
-.main-search-input:before {
-    content: '';
-    position: absolute;
-    bottom: -40px;
-    width: 50px;
-    height: 1px;
-    background: rgba(255,255,255,0.41);
-    left: 50%;
-    margin-left: -25px;
-}
-
-.main-search-input-item {
-    float: left;
-    width: 100%;
-    box-sizing: border-box;
-    border-right: 1px solid #eee;
-    height: 50px;
-    position: relative;
-}
-
-.main-search-input-item input:first-child {
-    border-radius: 100%;
-}
-
-.main-search-input-item input {
-    float: left;
-    border: none;
-    width: 100%;
-    height: 50px;
-    padding-left: 20px;
-}
-
-.main-search-button{
-
-      background: #4DB7FE;
-}
-
-.main-search-button {
-    position: absolute;
-    right: 0px;
-    height: 50px;
-    width: 120px;
-    color: #fff;
-    top: 0;
-    border: none;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    cursor: pointer;
-}
-
-.main-search-input-wrap {
-    max-width: 500px;
-    margin: 20px auto;
-    position: relative;
-}
-
-:focus {
-    outline: 0;
-}
-
-
-@media only screen and (max-width: 768px){
-.main-search-input {
-    background: rgba(255,255,255,0.2);
-    padding: 14px 20px 10px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 0px 10px rgba(255,255,255,0.0);
-}
-
-.main-search-input-item {
-    width: 100%;
-    border: 1px solid #eee;
-    height: 50px;
-    border: none;
-    margin-bottom: 10px;
-}
-
-.main-search-input-item input {
-    border-radius: 6px !important;
-    background: #fff;
-}
-}
-
-.bg-custom-1 {
-  background-color: #85144b;
-}
-
-.bg-custom-2 {
-background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-}
 
 
     </style>
 
 </head>
-<body class="container">
+<body class="container" onload="checkCookie()">
 
     <nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -159,6 +56,42 @@ var dateTime ='DATE : '+ date+'  TIME : '+today.toLocaleString('en-US', { hour: 
 
   </script>
 
+
+<script>
+    function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+    c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+    return c.substring(name.length, c.length);
+    }
+    }
+    return "";
+    }
+    function checkCookie() {
+    var username = getCookie("username");
+    if (username != "") {
+    alert("Welcome again " + username);
+    } else {
+    username = prompt("Please enter your name:", "");
+    if (username != "" && username != null) {
+    setCookie("username", username, 100);
+    }
+    }
+    }
+    </script>
+
       
       
               <!-- Optional JavaScript -->
@@ -173,74 +106,176 @@ var dateTime ='DATE : '+ date+'  TIME : '+today.toLocaleString('en-US', { hour: 
         <div class="success"><h5>Welcome to <span style="color:#DC3545;"> Q3 Car Care </span> Dashboard, You are successfully loged in!!!</h5></div><br/>
         <button class="btn btn-danger" onclick="logout()">Logout</button>
     </div></center>
-
+<style>
+    
+.form-box {
+  max-width: 500px;
+  margin: auto;
+  padding: 50px;
+  background: #ffffff;
+  border: 10px solid #f2f2f2;
+}
+</style>
+<br>
+<br>
    
-
-    <div class="main-search-input fl-wrap">
-                                        <div class="main-search-input-item">
-                                            <input type="text" id="namebox" value="" placeholder="Enter The Image Name">
-                                        </div>
-                                        <p>
-                                        <span style="color:#DC3545;padding-top: 0px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 28px;">*</span>Enter the Slider Image Name</p>
                                     
-                                    </div>
+
   
     <div class="item-wrapper one">
 
         <div class="item">
-            
-            <form data-validation="true" action="#" method="post" enctype="multipart/form-data">
-                <div class="item-inner">
-                    <div class="item-content">
-                  
+            <div class="form-box">
+                <div class="form-group ">
+                    <label for="exampleFormControlInput1"> <span style="color:#DC3545;padding-top: 0px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 18px;">*</span> Image Name</label>
+                    <input type="text" class="form-control" id="namebox" placeholder="Enter the Image Name">
+        
 
-                        
-                        <div class="image-upload">
-                            
-                          <label style="cursor: pointer;" for="file_upload">
+<div>
+                    <button type="button" id="select" class="btn btn-primary" > <i class="fa fa-tag"></i> Select</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="button" aria-pressed="false" id="upload" autocomplete="off"> <i class="fa fa-upload"></i> Upload</button>
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="button" aria-pressed="false" id="retrieve" autocomplete="off"> <i class="fa fa-download"></i> Retrieve Image</button>
+                </div>
+                  </div>
 
-                            <img src="" alt="" class="uploaded-image">
 
-                            <div class="h-100">
-                                   <div class="dplay-tbl">
-                                    <div class="dplay-tbl-cell">
-                                      
-         
-                                        <i class="fa fa-cloud-upload"></i>
-                                        <h5><b>Choose Your Image to Upload</b></h5>
-                                        <h6 class="mt-10 mb-70">Or Drop Your Image Here</h6>
+                  <br>
 
-      
-                                    </div>
-                                </div>
-                            </div><!--upload-content-->
-                            <input data-required="image" type="file" name="image_name" id="file_upload" class="image-input" data-traget-resolution="image_resolution" value="">
-                            
-                             </label>
-                        </div>
+                  <img id="myimg">
+                  <label id="UpProgress"></label>
 
-                        
-                    </div><!--item-content-->
-                </div><!--item-inner-->
 
-            </form>
+                  </div>
         </div><!--item-->
 
     </div>
     
 
     
+    <style>
 
+        img{
+             height: auto;
+             width: auto;
+             border: 1px solid black;
+        
+        }
+        
+        </style>
+        
+        
+        <!-- Firebase Libraries  -->
+        
+          <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-storage.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+        
+        <script id="MainScript">
+        
+        // Variable Declaration Part
+        var ImgName, ImgUrl;
+        var files = [];
+        var reader = new FileReader();
+        
+     
+        
+        // Configuration Part
+        
+        var firebaseConfig = {
+            apiKey: "AIzaSyC7s_qvCXXzuDpk_G2VabP9J4DHckdsEJA",
+            authDomain: "q3carcare-6efb7.firebaseapp.com",
+            databaseURL: "https://q3carcare-6efb7-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "q3carcare-6efb7",
+            storageBucket: "q3carcare-6efb7.appspot.com",
+            messagingSenderId: "82800552387",
+            appId: "1:82800552387:web:f5e4a0bd8377ee96fdf576",
+            measurementId: "G-51XEMWDKY0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+        
+        // Selection Process
+        
+        document.getElementById("select").onclick = function(e){
+        
+            var input = document.createElement("input");
+            input.type='file';
+            input.click();
+
+            input.onchange = e =>{
+                files = e.target.files;
+                reader = new FileReader();
+                reader.onload = function(){
+                    document.getElementById("myimg").src = reader.result;
+                }
+                reader.readAsDataURL(files[0]);
+            }
+            input.click();
+        }
+
+//         var bytes = new Uint8Array([0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x2c, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x21]);
+// ref.put(bytes).then((snapshot) => {
+//   console.log('Uploaded an array!');
+// });
+
+        // Upload Process
+
+        document.getElementById("upload").onclick = function(){
+            ImgName = document.getElementById('namebox').value;
+
+            var uploadTask = firebase.storage().ref('Slider Images/'+ImgName+'.png').put(files[0]);
+
+
+            uploadTask.on('state_changed', function(snapshot){
+                var progress = (snapshot.bytesTransferred / snapshot.totalBytes)*100;
+                
+                document.getElementById('UpProgress').innerHTML = 'upload: '+progress+'%';
+
+            },
+
+            // Error Handling for Firebase StorageBucket
+            
+
+            function(error){
+                alert("error in saving the image");
+            },
+
+
+            // Upload image to Firebase StorageBucket
+           
+            function(){
+            uploadTask.snapshot.ref.getDownloadURL().then((url)=>{
+                ImgUrl = url;
+
+                firebase.database().ref('Picture/'  +ImgName).set({
+                    Name: ImgName,
+                    Link: ImgUrl
+                });
+                alert("Image Added Sucessfully");
+                }
+            
+            );
+
+            
+            
+           });
+        }
+        
+        </script>
 
 
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script> -->
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script> -->
 
 
        <!-- Optional JavaScript -->
@@ -251,7 +286,7 @@ var dateTime ='DATE : '+ date+'  TIME : '+today.toLocaleString('en-US', { hour: 
 
 
 
-    <script src="./javascript/config.firebase.js"></script>
+    <!-- <script src="./javascript/config.firebase.js"></script> -->
     <script src="./javascript/Dashboard.js"></script>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>
