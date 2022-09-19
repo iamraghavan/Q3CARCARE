@@ -130,7 +130,7 @@ background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
     </style>
 
 </head>
-<body class="container-fluid">
+<body class="container">
 
     <nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -143,12 +143,20 @@ background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
   var today = new Date();
   var day = today.getDay();
   var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
-  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  var dateTime = date+' '+time;
+  var date = today.getFullYear()+' / '+(today.getMonth()+1)+' / '+today.getDate(); 
+  var time = ' Time : '+ today.getHours()    + ":" + today.getMinutes();
+//   var dateTime = time;
+var dateTime ='DATE : '+ date+'  TIME : '+today.toLocaleString('en-US', { hour: 'numeric', hour12: true })
    
-  document.getElementById("displayDateTime").innerHTML = dateTime + ' <br> Day :- ' + daylist[day];
+  document.getElementById("displayDateTime").innerHTML = dateTime + ' <br> DAY : ' + daylist[day];
  
+
+//   var hours = dt.getHours()
+// var minute = dt.getMinutes();
+// hours = (hours % 12) || 12;
+// console.log("Time is - " + hours + ":" + minute);
+
+
   </script>
 
       
@@ -233,6 +241,15 @@ background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
         https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+
+
+       <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 
     <script src="./javascript/config.firebase.js"></script>
     <script src="./javascript/Dashboard.js"></script>
