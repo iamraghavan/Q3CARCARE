@@ -143,7 +143,7 @@ var dateTime ='DATE : '+ date+'  TIME : '+today.toLocaleString('en-US', { hour: 
 
                   <br>
 
-                  <img id="myimg">
+                  <img style="height:100%; width:100%" id="myimg">
                   <label id="UpProgress"></label>
 
 
@@ -185,17 +185,17 @@ var dateTime ='DATE : '+ date+'  TIME : '+today.toLocaleString('en-US', { hour: 
         // Configuration Part
         
         var firebaseConfig = {
-            apiKey: "AIzaSyC7s_qvCXXzuDpk_G2VabP9J4DHckdsEJA",
-            authDomain: "q3carcare-6efb7.firebaseapp.com",
-            databaseURL: "https://q3carcare-6efb7-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "q3carcare-6efb7",
-            storageBucket: "q3carcare-6efb7.appspot.com",
-            messagingSenderId: "82800552387",
-            appId: "1:82800552387:web:f5e4a0bd8377ee96fdf576",
-            measurementId: "G-51XEMWDKY0"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+    apiKey: "AIzaSyC7s_qvCXXzuDpk_G2VabP9J4DHckdsEJA",
+    authDomain: "q3carcare-6efb7.firebaseapp.com",
+    databaseURL: "https://q3carcare-6efb7-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "q3carcare-6efb7",
+    storageBucket: "q3carcare-6efb7.appspot.com",
+    messagingSenderId: "82800552387",
+    appId: "1:82800552387:web:f5e4a0bd8377ee96fdf576",
+    measurementId: "G-51XEMWDKY0"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
         
         
         // Selection Process
@@ -227,13 +227,13 @@ var dateTime ='DATE : '+ date+'  TIME : '+today.toLocaleString('en-US', { hour: 
         document.getElementById("upload").onclick = function(){
             ImgName = document.getElementById('namebox').value;
 
-            var uploadTask = firebase.storage().ref('Slider Images/'+ImgName+'.png').put(files[0]);
+            var uploadTask = firebase.storage().ref('Slider/'+ImgName+'.png').put(files[0]);
 
 
             uploadTask.on('state_changed', function(snapshot){
                 var progress = (snapshot.bytesTransferred / snapshot.totalBytes)*100;
                 
-                document.getElementById('UpProgress').innerHTML = 'upload: '+progress+'%';
+                document.getElementById('UpProgress').innerHTML = 'Upload: '+progress+'%';
 
             },
 
@@ -245,25 +245,23 @@ var dateTime ='DATE : '+ date+'  TIME : '+today.toLocaleString('en-US', { hour: 
             },
 
 
-            // Upload image to Firebase StorageBucket
+            // Submit the image link to the firebase database
            
             function(){
-            uploadTask.snapshot.ref.getDownloadURL().then((url)=>{
+            uploadTask.snapshot.ref.getDownloadUrl().then(function(url){
                 ImgUrl = url;
 
-                firebase.database().ref('Picture/'  +ImgName).set({
+                firebase.database().ref('Picture/'+ImgName).set({
                     Name: ImgName,
-                    Link: ImgUrl
+                    Link: ImgUrl,
                 });
                 alert("Image Added Sucessfully");
                 }
-            
-            );
-
-            
-            
+            );   
            });
         }
+
+
         
         </script>
 
@@ -286,7 +284,13 @@ var dateTime ='DATE : '+ date+'  TIME : '+today.toLocaleString('en-US', { hour: 
 
 
 
-    <!-- <script src="./javascript/config.firebase.js"></script> -->
+        <!-- <script>
+                    admin.initializeApp({
+  credential: admin.credential.applicationDefault(),
+});
+        </script> -->
+<!-- 
+    <script src="./javascript/config.firebase.js"></script> -->
     <script src="./javascript/Dashboard.js"></script>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>

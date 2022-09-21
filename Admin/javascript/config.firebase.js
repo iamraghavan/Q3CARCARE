@@ -10,4 +10,8 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+admin.initializeApp({
+    credential: admin.credential.applicationDefault(),
+  });
 // firebase.analytics();

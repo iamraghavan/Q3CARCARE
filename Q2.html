@@ -32,71 +32,147 @@
   
 </head>
 <body>
-  <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">
-       
-          info@q3carcare.com
-          
-          </a>
-        <i class="bi bi-phone-fill phone-icon"></i> + 91 74486 99099
-      </div>
-      
+  <div class="container-fluid bg-light p-0">
+    <div class="row gx-0 d-none d-lg-flex">
+        <div class="col-lg-7 px-5 text-start">
+            <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                <small class="bi bi-envelope-fill  me-2 icon-red "></small>
+                <small style="color: red;"><a href="mailto:info@q3carcare.com">info@q3carcare.com</a> </small>
+            </div>
+            <div class="h-100 d-inline-flex align-items-center py-3">
+                <small class="bi bi-clock-fill me-2 icon-red"></small>
+                <small style="color: red;" >Mon - Fri : 09.00 AM - 09.00 PM</small>
+            </div>
+  
+  
+            <style>
+              .icon-red {
+              color: black;
+            }
+      </style>
+  
+  
+  
+        </div>
+        <div class="col-lg-5 px-5 text-end">
+            <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                <small class="bi bi-telephone-fill me-2  icon-red"></small>
+                <small><a href="tel:+919524034238">(+91) 95240 34238</a></small>
+            </div>
+            <div class="h-100 d-inline-flex align-items-center">
+                <a class="btn btn-sm-square me-1 " href="https://www.facebook.com/q3carcare"><i class="bi bi-facebook icon-red"></i></a>
+                <!-- <a class="btn btn-sm-square me-1 " href=""><i class="bi bi-twitter icon-red"></i></a> -->
+                <a class="btn btn-sm-square me-1 " href="https://www.instagram.com/circuits99q3carcare/"><i class="bi bi-linkedin icon-red"></i></a>
+                <a class="btn btn-sm-square me-1 " href="https://www.linkedin.com/company/circuits99-q3-car-care/"><i class="bi bi-instagram icon-red"></i></a>
+            </div>
+        </div>
     </div>
-
-    <div class=" social-links d-none d-md-block">
-
-      <i class="bi bi-instagram"></i><a href="https://www.instagram.com/circuits99q3carcare/" target="_blank" rel="noopener noreferrer">
-       
-Instagram
-        
-        </a>
-        <i class="bi bi-facebook"></i><a href="https://www.facebook.com/q3carcare" target="_blank" rel="noopener noreferrer">
-       
-          Facebook
-                  
-                  </a>
-                  <i class="bi bi-linkedin"></i><a href="https://www.linkedin.com/company/circuits99-q3-car-care/" target="_blank" rel="noopener noreferrer">
-       
-                    LinkedIn
-                            
-                            </a>
-                          
-    </div>
-  </section>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <!-- <h1 class="logo"><a href="index.html"></a></h1> -->
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="index.html" class="logo"><img src="./Logo/q3 150.png" alt="" class="img-fluid"></a>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="./index.html">Home</a></li>
-
-
-          <li class="dropdown"><a href="#"><span>Service</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="./Q1.html">Q1  (WASH AND DETAILING SERVICES)	</a></li>
-              <li><a href="./Q2.html">Q2  (MECHANICAL SERVICES)</a></li>
-              <li><a href="./Q3.html">Q3  (TYRE CARE SERVICES)</a></li>
-
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="./contact.html">Contact us</a></li>
-          <a href="#contact" class=" btn-danger btn-get-started scrollto">Schedule service </a>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
+  </div>  
+  <style>
+    /*** Navbar ***/
+   .navbar .dropdown-toggle::after {
+     border: none;
+     content: "\f107";
+     font-family: "Font Awesome 5 Free";
+     font-weight: 900;
+     vertical-align: middle;
+     margin-left: 8px;
+   }
+   
+   .navbar-light .navbar-nav .nav-link {
+     margin-right: 30px;
+     padding: 25px 0;
+     color: #ffffff;
+     font-size: 15px;
+     text-transform: uppercase;
+     outline: none;
+   }
+   
+   .navbar-light .navbar-nav .nav-link:hover,
+   .navbar-light .navbar-nav .nav-link.active {
+     color: #cc1616;
+   }
+   
+   @media (max-width: 991.98px) {
+     .navbar-light .navbar-nav .nav-link {
+       margin-right: 0;
+       padding: 10px 0;
+     }
+   
+     .navbar-light .navbar-nav {
+       border-top: 1px solid #eeeeee;
+     }
+   }
+   
+   .navbar-light .navbar-brand,
+   .navbar-light a.btn {
+     height: 75px;
+   }
+   
+   .navbar-light .navbar-nav .nav-link {
+     color:#000000;
+     font-weight: 500;
+   }
+   
+   .navbar-light.sticky-top {
+     top: -100px;
+     transition: 0.5s;
+   }
+   
+   @media (min-width: 992px) {
+     .navbar .nav-item .dropdown-menu {
+       display: block;
+       border: none;
+       margin-top: 0;
+       top: 150%;
+       opacity: 0;
+       visibility: hidden;
+       transition: 0.5s;
+     }
+   
+     .navbar .nav-item:hover .dropdown-menu {
+       top: 100%;
+       visibility: visible;
+       transition: 0.5s;
+       opacity: 1;
+     }
+   }
+   
+   
+   </style>
+   
+       <!-- Navbar Start -->
+       <nav class="navbar navbar-expand-lg bg-light navbar-light shadow sticky-top p-0">
+           
+         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+           <img src="./Logo/q3 2150.png" style="max-height: 150px; padding-bottom: 8px;" alt="" class="img-fluid">
+         </a>
+         
+         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+             <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarCollapse">
+             <div class="navbar-nav ms-auto p-4 p-lg-0">
+                 <a href="index.html" class="nav-item nav-link active">Home</a>
+                 <a href="#about" class="nav-item nav-link">About us</a>
+                 <a href="#services" class="nav-item nav-link">Gallery</a>
+                 <div class="nav-item dropdown">
+                     <a href="#" class="nav-link " data-bs-toggle="dropdown">  Services <i class="bi bi-arrow-down-circle"></i></a>
+                     <div class="dropdown-menu fade-up m-0">
+                       <a href="./Q1.html" class="dropdown-item"> <i class="bi bi-arrow-right"></i> Q1 (WASH AND DETAILING SERVICE)</a>
+                         <a href="./Q2.html" class="dropdown-item"> <i class="bi bi-arrow-right"></i> Q2 (MECHANICAL SERVICE)</a>
+                         <a href="./Q3.html" class="dropdown-item"> <i class="bi bi-arrow-right"></i> Q3 (TYRE CARE SERVICE)</a>
+           
+                     </div>
+                 </div>
+                 <a href="contact.html" class="nav-item nav-link">Contact</a>
+             </div>
+             <a href="./contact.html" class="btn btn-danger py-4 px-lg-5 d-none d-lg-block">Schedule Services<i class="bi bi-arrow-right ms-1"></i></a>
+         </div>
+   
+   
+     </nav>
+     <!-- Navbar End -->
   <style>
     .containerBred{margin-top: 20px}
   </style>

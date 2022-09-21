@@ -12,7 +12,42 @@ img{
 
 Firebase Libraries 
 
-<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+
+<script id="MainScript">
+
+// Variable Declaration Part
+var ImgName, ImgUrl;
+var files = [];
+var reader = new FileReader();
+
+// Configuration Part
+
+var firebaseConfig = {
+    apiKey: "AIzaSyC7s_qvCXXzuDpk_G2VabP9J4DHckdsEJA",
+    authDomain: "q3carcare-6efb7.firebaseapp.com",
+    databaseURL: "https://q3carcare-6efb7-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "q3carcare-6efb7",
+    storageBucket: "q3carcare-6efb7.appspot.com",
+    messagingSenderId: "82800552387",
+    appId: "1:82800552387:web:f5e4a0bd8377ee96fdf576",
+    measurementId: "G-51XEMWDKY0"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+
+// Selection Process
+
+document.getElementById("select").onclick = function(e){
+
+    var input = document.createElement("input");
+    input.type='file';
+    input.click();
+}
+
+
+</script>
