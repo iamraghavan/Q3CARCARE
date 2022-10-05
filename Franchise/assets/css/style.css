@@ -32559,7 +32559,7 @@ button.hamburger {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #343f52;
+  color: #FFFFFF;
   transition: all 0.2s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
