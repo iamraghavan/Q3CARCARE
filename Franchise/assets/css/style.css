@@ -5303,7 +5303,7 @@ fieldset:disabled .btn {
 .navbar {
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0;
-  --bs-navbar-color: #343f52;
+  --bs-navbar-color: #FFF;
   --bs-navbar-hover-color: #3f78e0;
   --bs-navbar-disabled-color: rgba(52, 63, 82, 0.3);
   --bs-navbar-active-color: #3f78e0;
