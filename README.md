@@ -84,3 +84,6 @@ This project is used by the following companies:
 
 - Merkado
 - Bumble Bees
+
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/96311e38-8052-4052-bad1-e61beff9e744/deploy-status)](https://app.netlify.com/sites/datakurudhi/deploys)
